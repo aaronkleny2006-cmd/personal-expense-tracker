@@ -3,8 +3,10 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API = 'http://localhost:5000/api/expenses';
-const BUDGET_API = 'http://localhost:5000/api/budgets';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
+const API = `${API_BASE_URL}/api/expenses`;
+const BUDGET_API = `${API_BASE_URL}/api/budgets`;
 
 const categories = [
   'Food', 'Transport', 'Shopping', 'Bills',
